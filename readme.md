@@ -19,7 +19,12 @@ On the command prompt run the following commands:
 
 ### 2. Usage
 
-URL : http://localhost:3001/
+## Base URL - http://localhost:3001/
+## API Pages 
+- http://localhost:3001/clinic/search?ClinicName=Mayo Clinic
+- http://localhost:3001/clinic/search?ClinicName=Mayo Clinic&stateCode=FL
+- http://localhost:3001/clinic/all
+- http://localhost:3001/clinic/get/3
 
 
 
@@ -35,3 +40,7 @@ $ docker build . -t nodejs-rest
 Docker container is run with exposing port 3001 from the container to port 9000 on the host with the following command:
 
 docker run -e VERSION=1.1 -p 9000:3001 nodejs-rest
+
+### 5. Eslint
+Run npm run lint to check for linting errors.
+Run npm run lint:fix to fix the linting errors.

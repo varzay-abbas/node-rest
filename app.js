@@ -6,8 +6,13 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const config = require('./config/config');
 const app = new express();
+const winston = require('winston');
+const logger = winston.createLogger({
+    transports: [
+        new winston.transports.Console()
+    ]
+});
 
 // register JSON parser middlewear
 app.use(bodyParser.json());
@@ -20,8 +25,7 @@ app.get('/', function (req, res) {
 require('./routes/clinicRoutes')(app);
 
 app.listen(3001, () => {
-    /* eslint-disable */
-   // console.log('Server is up!');//
+  logger.info('Server is up and running at port:3001');
 });
 
 module.exports = app;
