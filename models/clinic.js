@@ -1,4 +1,4 @@
-"use strict"
+'use strict'
 
 class Clinic {
   constructor(id, clinicName, State, Availability) {
